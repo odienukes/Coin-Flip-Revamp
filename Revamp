@@ -1,0 +1,94 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Roblox Flip - Odie's Remake", "DarkTheme")
+local Tab = Window:NewTab("Autoclick")
+
+local Section = Tab:NewSection("Autoclick Settings")
+local Section1 = Tab:NewSection("Auto Open Cases")
+
+Section:NewToggle("Autoclick", "Auto Clicks", function(state)
+getgenv().tap = state
+while getgenv().tap == true do wait(0.01)
+game:GetService("ReplicatedStorage").Events.clicked:FireServer()
+end
+end)
+-----
+Section1:NewToggle("Open Common Case", "Auto Opens The Common Case", function(state)
+getgenv().epic = state
+while getgenv().epic == true do wait(0.01)
+local args = {
+    [1] = "Common"
+}
+
+game:GetService("ReplicatedStorage").Events.crateroll_request:InvokeServer(unpack(args))
+
+end
+end)
+
+Section1:NewToggle("Open Rare Case", "Auto Opens The Rare Case", function(state)
+getgenv().epic = state
+while getgenv().epic == true do wait(0.01)
+local args = {
+    [1] = "Rare"
+}
+
+game:GetService("ReplicatedStorage").Events.crateroll_request:InvokeServer(unpack(args))
+
+end
+end)
+Section1:NewToggle("Open Epic Case", "Auto Opens The Epic Case", function(state)
+getgenv().epic = state
+while getgenv().epic == true do wait(0.01)
+local args = {
+    [1] = "Epic"
+}
+
+game:GetService("ReplicatedStorage").Events.crateroll_request:InvokeServer(unpack(args))
+
+end
+end)
+Section1:NewToggle("Open Legendary Case", "Auto Opens The Legendary Case", function(state)
+getgenv().epic = state
+while getgenv().epic == true do wait(0.01)
+local args = {
+    [1] = "Legendary"
+}
+
+game:GetService("ReplicatedStorage").Events.crateroll_request:InvokeServer(unpack(args))
+
+end
+end)
+Section1:NewToggle("Open Exotic Case", "Auto Opens The Exotic Case", function(state)
+getgenv().epic = state
+while getgenv().epic == true do wait(0.01)
+local args = {
+    [1] = "Exotic"
+}
+
+game:GetService("ReplicatedStorage").Events.crateroll_request:InvokeServer(unpack(args))
+
+end
+end)
+Section1:NewToggle("Open Winter Case", "Auto Opens The Winter Case", function(state)
+getgenv().epic = state
+while getgenv().epic == true do wait(0.01)
+local args = {
+    [1] = "Winter"
+}
+
+game:GetService("ReplicatedStorage").Events.crateroll_request:InvokeServer(unpack(args))
+
+end
+end)
+
+local Section1 = Tab:NewSection("Auto Sell")
+
+Section1:NewToggle("Sell All In Inventory", "Auto Sells Every Item You Own(Great For Profit)", function(state)
+getgenv().epic = state
+while getgenv().epic == true do wait(0.01)
+
+
+game:GetService("ReplicatedStorage").Events.sellEntire:InvokeServer()
+
+
+end
+end)
